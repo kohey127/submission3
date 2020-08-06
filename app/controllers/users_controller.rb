@@ -5,15 +5,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    
   end
 
   def show
 
   end
 
-  def update
-    
+  def create
+    @book = Book.new(book_params) #書き方をテキストで確認
+    @book.save
   end
   
   private
