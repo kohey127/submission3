@@ -1,11 +1,13 @@
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%
-=begin%>
+
  <%= render "devise/shared/error_messages", resource: resource %> 
-<%
-=end%>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -30,8 +32,6 @@
   </div>
 <% end %>
 
-<%
-=begin%>
+
  <%= render "devise/shared/links" %> 
-<%
-=end%>
+

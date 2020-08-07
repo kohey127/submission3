@@ -18,10 +18,10 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li>
-              <li><a class="glyphicon glyphicon-link about" href="/home/about"> Users</a></li>
-              <li><a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> Books</a></li>
-              <li><a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"> logout</a></li>
+              <li><%= link_to "Home", user_path(current_user.id), class: "glyphicon glyphicon-edit sign_up" %></li>
+              <li><%= link_to "Users", users_path, class: "glyphicon glyphicon-edit sign_up" %></li>
+              <li><%= link_to "Books", books_path, class: "glyphicon glyphicon-edit sign_up" %></li>
+              <li><%= link_to "logout", destroy_user_session_path, class: "glyphicon glyphicon-edit sign_up", method: :delete %></li>
             <% else %>
               <li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li>
               <li><a class="glyphicon glyphicon-link about" href="/home/about"> About</a></li>
@@ -33,8 +33,10 @@
       </div>
     </header>
 
-  <%= yield %>
-
+    <body>
+      <%= yield %>
+    </body>
+    
     <footer>
       <div class='container'>
         <div class='row'>

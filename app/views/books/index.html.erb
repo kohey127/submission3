@@ -13,42 +13,7 @@
   </div>
 <% end %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3">
-      <h2>User info</h2>
-      <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>name</th>
-            <th><%= current_user.name %></th>
-          </tr>
-          <tr>
-            <th>introduction</th>
-            <th><%= current_user.introduction %></th>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="row">
-        <%= link_to "wrench", edit_user_path(current_user) %>
-      </div>
-      <h2>New book</h2>
-      <%= form_for(@book, url: '/books') do |f| %>
-        <div>
-          <label>Title</label>
-          <%= f.text_field :title %>
-        </div>
-        <div>
-          <label>Opinion</label>
-          <%= f.text_area :body %>
-        </div>
-        <div>
-          <%= f.submit 'Create Book' %>
-        </div>
-      <% end %>
-    </div>
+<%= render '/users/list', book: @book %>
 
     <div class="col-xs-9">
       <h2>Books</h2>
@@ -65,10 +30,10 @@
           <% @books.each do |book| %>
             <tr>
               <td>
-                <%= attachment_image_tag book.user.name, :profile_image, fallback: "no_image.jpg" %>
+                <%= attachment_image_tag book.user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
               </td>
               <td>
-                <%= link_to book.title, book_path(params[:id]) do %>
+                <%= link_to book_path(book.id) do %>
                   <%= book.title %>
                 <% end %>
               </td>
