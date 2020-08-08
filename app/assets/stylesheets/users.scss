@@ -1,3 +1,21 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrench {
+  margin: 15px;
+  background-color: white;
+  border: black solid 1px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.wrench:hover {
+  background-color: gray;
+}
+
+.glyphicon-wrench {
+  color: black;
+  font-size: 20px;
+}
