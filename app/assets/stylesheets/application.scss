@@ -44,10 +44,11 @@ body {
 }
 
 .btn {
-  margin: 15px;
+  margin: 15px 0;
   background-color: skyblue;
   color: white;
-  padding: 10px;
+  padding: 10px 0;
+  width: 100%;
 }
 
 .btn:hover {
@@ -57,4 +58,26 @@ body {
 
 .profile_img {
   margin: 10px 80px;
+}
+
+.form {
+  width: 100%;
+}
+
+.wrench {
+  margin: 15px 0;
+  background-color: white;
+  border: black solid 1px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.wrench:hover {
+  background-color: gray;
+}
+
+.glyphicon-wrench {
+  color: black;
+  font-size: 20px;
 }
